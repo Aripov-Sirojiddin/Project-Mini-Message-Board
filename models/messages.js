@@ -19,7 +19,12 @@ async function addMessage(message) {
   messages.push(message);
 }
 
+async function getMessage(id) {
+  return messages[id];
+}
+
 module.exports = {
   getAllMessages,
-  addMessage
+  addMessage,
+  getMessage,
 };
