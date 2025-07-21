@@ -1,4 +1,9 @@
-<a href="/new" class="button">Add a new Message</a>
 <% messages.forEach((message) => { %>
   <%- include("../partials/message", {message: message}) %>
 <% }); %>
+
+<% if (showForm) {%>
+  <%- include("../partials/form", {errors: errors, values: values}) %>
+<% } else {%>
+  <a href="/new" class="button">Add a new Message</a>
+<% } %>
