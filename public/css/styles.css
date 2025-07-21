@@ -22,3 +22,21 @@ body {
 .dont-grow {
   max-width: 20rem;
 }
+
+.button {
+  background: rgb(0, 145, 255);
+  border: none;
+  border-radius: 0.5rem;
+  align-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.button:hover {
+  background: rgb(2, 93, 162);
+}
