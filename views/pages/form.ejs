@@ -1,5 +1,10 @@
 <div class="container-vertical center">
-  <h4>Form for new message</h4>
+  <h1>New Message</h1>
+  <div class="error">
+    <% errors.forEach((error) => { %> 
+      <p><%= error %></p>
+    <% }); %>
+  </div>
   <form 
     method="POST" 
     action="/new" 
@@ -10,12 +15,13 @@
       placeholder="Author name" 
       id="authorName" 
       name="user"
+      value="<%= values.user || ""%>"
     />
     <textarea 
       placeholder="message" 
       id="message"
       name="text"
-    ></textarea>
+    ><%= values.text ? `${values.text}` : ""%></textarea>
     <input class="button" type="submit" />
   </form>
 </div>
