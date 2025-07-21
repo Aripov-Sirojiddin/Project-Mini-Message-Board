@@ -1,8 +1,21 @@
 <div class="container-vertical center">
   <h4>Form for new message</h4>
-  <form method="POST" action="/new" class="container-vertical dont-grow">
-    <input type="text" placeholder="Author name" id="name" />
-    <textarea placeholder="message" id="message"></textarea>
+  <form 
+    method="POST" 
+    action="/new" 
+    class="container-vertical dont-grow"
+  >
+    <input 
+      type="text" 
+      placeholder="Author name" 
+      id="authorName" 
+      name="user"
+    />
+    <textarea 
+      placeholder="message" 
+      id="message"
+      name="text"
+    ></textarea>
     <input type="submit" />
   </form>
 </div>

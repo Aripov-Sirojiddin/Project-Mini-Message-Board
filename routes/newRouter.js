@@ -1,9 +1,9 @@
 const { Router } = require("express");
-const { getForm } = require("../controllers/newController");
+const { getForm, createNewMessage } = require("../controllers/newController");
 const newRouter = Router();
 
-newRouter.get("/", getForm);
+newRouter.get("/", getForm).post("/", createNewMessage);
 
 module.exports = {
-  newRouter
+  newRouter,
 };

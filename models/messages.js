@@ -15,6 +15,11 @@ async function getAllMessages() {
   return messages;
 }
 
+async function addMessage(message) {
+  messages.push(message);
+}
+
 module.exports = {
   getAllMessages,
+  addMessage
 };
