@@ -34,9 +34,10 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: x-large;
 }
-
+.small-text {
+  font-size: smaller;
+}
 .button:hover {
   background: rgb(2, 93, 162);
 }
