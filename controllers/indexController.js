@@ -1,5 +1,6 @@
 const messagesModel = require("../models/messages");
 const formatDate = require("../helpers/formatDate");
+const { validationResult } = require("express-validator");
 
 let locals = {
   title: "All messages",
@@ -31,21 +32,11 @@ async function showForm(req, res) {
 }
 
 async function createNewMessage(req, res) {
-  const errors = [];
+  const errors = validationResult(req).array();
   const newMessage = {
     ...req.body,
     added: new Date(),
   };
-
-  if (newMessage.user == null || newMessage.user === "") {
-    errors.push("Name can't be empty");
-  }
-  if (newMessage.email == null || newMessage.email === "") {
-    errors.push("Email can't be empty");
-  }
-  if (newMessage.text == null || newMessage.text === "") {
-    errors.push("Message can't be empty");
-  }
 
   locals = {
     ...locals,

@@ -1,11 +1,18 @@
 <div>
   <h1>New Message</h1>
   <div class="error">
-    <ul>
-      <% errors.forEach((error) => { %> 
-        <li><%= error %></li>
-      <% }); %>
-    </ul>
+    <% errors.forEach((error) => { %> 
+      <%= console.log(error)%>
+      <li>
+        <a 
+          class="text-decoration-none" 
+          href="#<%= error.path %>"
+        >
+          "<%= error.value %>" is not a valid <%= error.path %>. 
+          <br/>- <%= error.msg %>
+        </a>
+      </li>
+    <% }); %>
   </div>
   <form 
     method="POST" 
@@ -15,7 +22,7 @@
     <input 
       type="text" 
       placeholder="Author name" 
-      id="authorName" 
+      id="user" 
       name="user"
       value="<%= values.user || ""%>"
     />
@@ -42,7 +49,7 @@
     ><%= values.bio ? `${values.bio}` : ""%></textarea>
     <textarea 
       placeholder="message" 
-      id="message"
+      id="text"
       name="text"
     ><%= values.text ? `${values.text}` : ""%></textarea>
     <input class="button" type="submit" />
