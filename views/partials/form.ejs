@@ -1,9 +1,11 @@
 <div>
   <h1>New Message</h1>
   <div class="error">
-    <% errors.forEach((error) => { %> 
-      <p><%= error %></p>
-    <% }); %>
+    <ul>
+      <% errors.forEach((error) => { %> 
+        <li><%= error %></li>
+      <% }); %>
+    </ul>
   </div>
   <form 
     method="POST" 
