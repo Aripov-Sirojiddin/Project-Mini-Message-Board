@@ -17,6 +17,27 @@
       name="user"
       value="<%= values.user || ""%>"
     />
+    <input 
+      type="text" 
+      placeholder="email" 
+      id="email" 
+      name="email"
+      value="<%= values.email || ""%>"
+    />
+    <input 
+      type="number" 
+      min="13"
+      max="120"
+      placeholder="age" 
+      id="age" 
+      name="age"
+      value="<%= values.age || ""%>"
+    />
+    <textarea 
+      placeholder="bio" 
+      id="bio"
+      name="bio"
+    ><%= values.bio ? `${values.bio}` : ""%></textarea>
     <textarea 
       placeholder="message" 
       id="message"
