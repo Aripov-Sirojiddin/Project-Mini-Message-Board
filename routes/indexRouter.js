@@ -18,12 +18,12 @@ indexRouter.post("/new",
   body("email")
     .trim()
     .isEmail()
-    .withMessage("Must be a valid email."),
+    .withMessage("Must be a valid email like example@example.com"),
   body("age")
     .optional()
     .trim()
     .isNumeric()
-    .withMessage("Must be a number."),
+    .withMessage("Must be a number between 13 and 120."),
   body("bio")
     .optional(),
   body("text")

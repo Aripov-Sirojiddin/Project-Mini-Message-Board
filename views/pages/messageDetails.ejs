@@ -5,7 +5,7 @@
   <% if (message.age != null) { %>
     <p>age: <%= message.age %></p>
   <% } %>
-  <% if (message.bio != null) { %>
+  <% if (message.bio != null || message.bio === "") { %>
     <p>bio: <%= message.bio %></p>
   <% } %>
 </div>
