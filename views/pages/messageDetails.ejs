@@ -1,2 +1,13 @@
 <h1>Message Details</h1>
+<div>
+  <h3>Name: <%= message.user %></h3>
+  <p>Email: <%= message.email %></p>
+  <% if (message.age != null) { %>
+    <p>age: <%= message.age %></p>
+  <% } %>
+  <% if (message.bio != null) { %>
+    <p>bio: <%= message.bio %></p>
+  <% } %>
+</div>
+
 <%- include("../partials/message", {message: message, formatDate: formatDate, id: id})%>
