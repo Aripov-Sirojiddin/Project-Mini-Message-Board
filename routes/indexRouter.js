@@ -11,7 +11,7 @@ const indexRouter = Router();
 indexRouter.get("/", getAllMessages);
 indexRouter.get("/new", showForm);
 indexRouter.post("/new", 
-  body("user")
+  body("username")
     .trim()
     .notEmpty()
     .withMessage("Author name can't be empty."),

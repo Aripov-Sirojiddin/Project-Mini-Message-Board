@@ -15,10 +15,13 @@ async function isEmailAvailable(email) {
 
 async function addMessage(message) {
   messages.push(message);
-  await pool.query(`
+  await pool.query(
+    `
     INSERT INTO messages (text, username, email, age, bio)
     VALUES($1, $2, $3, $4, $5)
-  `, [message.text]);
+  `,
+    [message.text, message.username, message.email, message.age, message.bio]
+  );
 }
 
 async function getMessage(id) {
