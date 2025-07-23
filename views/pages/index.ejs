@@ -1,5 +1,5 @@
-<% messages.forEach((message, i) => { %>
-  <%- include("../partials/message", {message: message, id: i}) %>
+<% messages.forEach((message) => { %>
+  <%- include("../partials/message", {message: message, id: message.id}) %>
 <% }); %>
 
 <div id="page-bottom">

@@ -5,16 +5,21 @@ async function getAllMessages() {
   return rows;
 }
 
+async function isUsernameAvailable(username) {
+  const { rows } = await pool.query("SELECT * FROM messages WHERE username = $1", [
+    username,
+  ]);
+  return rows.length === 0;
+}
+
 async function isEmailAvailable(email) {
-  const { rowCount } = await pool.query(
-    "SELECT * FROM messages WHERE email = $1",
-    [email]
-  );
-  return rowCount === 0;
+  const { rows } = await pool.query("SELECT * FROM messages WHERE email = $1", [
+    email,
+  ]);
+  return rows.length === 0;
 }
 
 async function addMessage(message) {
-  messages.push(message);
   await pool.query(
     `
     INSERT INTO messages (text, username, email, age, bio)
@@ -25,7 +30,10 @@ async function addMessage(message) {
 }
 
 async function getMessage(id) {
-  return messages[id];
+  const { rows } = await pool.query("SELECT * FROM messages WHERE id = $1;", [
+    id,
+  ]);
+  return rows;
 }
 
 module.exports = {
@@ -33,4 +41,5 @@ module.exports = {
   addMessage,
   getMessage,
   isEmailAvailable,
+  isUsernameAvailable,
 };

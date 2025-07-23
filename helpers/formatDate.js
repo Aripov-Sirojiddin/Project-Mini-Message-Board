@@ -1,5 +1,5 @@
-function formatDate(unix) {
-  const date = new Date(unix * 1000);
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
   const months = [
     "January",
     "February",
