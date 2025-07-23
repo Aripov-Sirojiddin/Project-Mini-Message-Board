@@ -35,7 +35,7 @@ async function createNewMessage(req, res) {
   const errors = validationResult(req).array();
   const newMessage = {
     ...req.body,
-    added: new Date(),
+    added: Date.now(),
   };
 
   locals = {

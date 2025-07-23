@@ -1,4 +1,5 @@
-function formatDate(date) {
+function formatDate(unix) {
+  const date = new Date(unix * 1000);
   const months = [
     "January",
     "February",
